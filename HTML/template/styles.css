@@ -1,0 +1,76 @@
+html{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    max-height: 100%;
+    height: 100%;
+}
+
+div{
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div p{
+    padding: 2% 2% 2%;
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.header{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.text{
+    padding-left: 25px;
+    color: white;
+    font-size: 25px;
+}
+
+.navigation{
+    display: flex;
+}
+
+.navigation h1{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.halfs{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.thirds{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.quarters{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 50%;
+}
