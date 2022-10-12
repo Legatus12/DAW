@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <title>Document</title>
+    </head>
+
+    <body>
+        
+        <input id="input" placeholder="radio">
+        <button type="submit" id="calculate">CALCULATE</button>
+        <ul id="list"></ul>
+
+        <script>
+
+            const input = document.getElementById("input");
+            const list = document.getElementById("list");
+
+            document.getElementById("calculate").addEventListener("click", () => {
+                let area = Math.pow(Number(input.value), 2) * Math.PI;
+                let newLi = document.createElement("li");
+                newLi.innerHTML = "radio : " + input.value + " - area : " + area.toFixed(2);
+                list.appendChild(newLi);
+                input.value = "";
+                input.focus();
+
+            });
+
+            document.getElementById("delete").addEventListener("click", () => {
+                console.log(document.querySelectorAll("[value='"+input.value+"']"));
+            });
+
+        </script>
+
+    </body>
+
+</html>
