@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <title id="title">Document</title>
+    </head>
+
+    <body>
+        
+        <input id="input" placeholder="radio">
+        <button type="submit" id="btn">CHANGE TITLE</button>
+        <h1 id="heading">TITLE</h1>
+
+        <script>
+
+            const input = document.getElementById("input");
+            const title = document.getElementById("title");
+            const heading = document.getElementById("heading");
+
+            document.getElementById("btn").addEventListener("click", () => {
+                heading.innerHTML = input.value;
+                title.innerHTML = input.value;
+                input.value = "";
+                input.focus();
+
+            });
+
+        </script>
+
+    </body>
+
+</html>
