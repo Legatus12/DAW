@@ -1,77 +1,99 @@
 const screen = document.getElementById("screen");
 const previous = document.getElementById("previous");
 let operation = null;
-let operating = false;
+let writing = true;
+let reapeating = false;
 let numbers = [];
 
 const buttons = document.getElementsByClassName("button");
 const operators = document.getElementsByClassName("operator");
 const specials = document.getElementsByClassName("specials");
 
-console.log(numbers);
-
 [...buttons].forEach(x => x.addEventListener("click", () => {
-    if(operating)
+    console.log(x.id);
+    reapeating = false;
+    if(!writing){
         screen.innerHTML = "";
+        writing = true;
+    }
 
-    operating = false;
     screen.innerHTML += x.innerHTML;
-    console.log(x);
-    }));
+}));
 
 [...operators].forEach(x => x.addEventListener("click", () => {
-    console.log(numbers);
-    switch(x.innerHTML){
-        case "+" :
-            previous.innerHTML = screen.innerHTML;
-            operation = "x";
-        case "-" :
-            if(numbers.length <= 2)
-                numbers.push(Number(screen.innerHTML));
-            operation = "-";
-            operating = true;
-            break;
-        case "x" :
-            if(numbers.length <= 2)
-                numbers.push(Number(screen.innerHTML));
-            operation = "x";
-            operating = true;
-            break;
-        case "/" :
-            if(numbers.length <= 2)
-                numbers.push(Number(screen.innerHTML));
-            operation = "/";
-            operating = true;
-            break;
-    }}));
+    reapeating = false;
+    if(screen.innerHTML != ""){
+        numbers[0] = (Number(screen.innerHTML));
+        console.log(numbers);
+        writing = false;
+        console.log(x.id)
+        switch(x.id){
+            case "plus" :
+                previous.innerHTML = screen.innerHTML + " + ";
+                operation = "plus";
+                break;
+            case "minus" :
+                previous.innerHTML = screen.innerHTML + " - ";
+                operation = "minus";
+                break;
+            case "multiply" :
+                previous.innerHTML = screen.innerHTML + " x ";
+                operation = "multiply";
+                break;
+            case "divide" :
+                previous.innerHTML = screen.innerHTML + " / ";
+                operation = "divide";
+                break;
+}}}));
 
-    [...specials].forEach(x => x.addEventListener("click", () => {
-        switch(x.innerHTML){
-            case "C" :
-                previous.innerHTML = "";
-                screen.innerHTML = "";
-                numbers = [];
-                console.log(numbers);
-                break;
-            case "." :
-                screen.innerHTML += ".";
-                break;
-        }
-        }));
+[...specials].forEach(x => x.addEventListener("click", () => {
+    switch(x.innerHTML){
+        case "C" :
+            reapeating = false;
+            screen.innerHTML = "";
+            previous.innerHTML = "";
+            numbers = [];
+            console.log(numbers);
+            break;
+        case "." :
+            reapeating = false;
+            screen.innerHTML += ".";
+            break;
+    }
+}));
 
 document.getElementById("equal").addEventListener("click", () => {
-    switch(operation){
-        case "+" :
-            screen.innerHTML = numbers[0] + numbers[1];
-            break;
-        case "-" :
-            screen.innerHTML = numbers[0] - numbers[1];
-            break;
-        case "x" :
-            screen.innerHTML = numbers[0] * numbers[1];
-            break;
-        case "/" :
-            screen.innerHTML = numbers[0] / numbers[1];
-            break;
+    let result;
+    if(screen.innerHTML != ""){
+        console.log("equal");
+        if(!reapeating){
+            console.log("not repeating");
+            numbers[1] = (Number(screen.innerHTML));
         }
-});
+        switch(operation){
+        case "plus" :
+            result = numbers[0] + numbers[1];
+            previous.innerHTML = numbers[0] +" + "+ numbers[1] +" = "+ result;
+            screen.innerHTML = result;
+            break;
+        case "minus" :
+            result = numbers[0] - numbers[1];
+            previous.innerHTML = numbers[0] +" - "+ numbers[1] +" = "+ result;
+            screen.innerHTML = result;
+            break;
+        case "multiply" :
+            result = numbers[0] * numbers[1];
+            previous.innerHTML = numbers[0] +" x "+ numbers[1] +" = "+ result;
+            screen.innerHTML = result;
+            break;
+        case "divide" :
+            result = numbers[0] / numbers[1];
+            previous.innerHTML = numbers[0] +" / "+ numbers[1] +" = "+ result;
+            screen.innerHTML = result;
+            break; 
+        }
+        numbers[0] = Number(screen.innerHTML);
+        writing = false;
+        reapeating = true;
+        console.log(numbers);
+}});
