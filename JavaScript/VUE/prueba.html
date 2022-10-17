@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="miApp">
+            <input type="text" name="" v-model="nombre" @keyup.enter="changeName">
+            <h1>{{ nombre }}</h1>
+            <input type="text" name="" v-model="apellidos">
+            <h1>{{ apellidos }}</h1>
+            <ul>
+                <li v-for="item in items">{{ item }}</li>
+            </ul>
+            <select>
+                <option v-for="item in items">{{ item }}</option>
+            </select>
+        </div>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="prueba.js"></script>
+    </body>
+</html>
