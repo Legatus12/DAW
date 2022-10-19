@@ -1,0 +1,11 @@
+{
+    "datos": [
+      { "id": 1, "ciudad": "Madrid", "year": "España" },
+      { "id": 2, "title": "Roma", "author": "Italia" },
+      { "id": 3, "title": "Paris", "author": "Francia" }
+    ],
+    "comments": [
+      { "id": 1, "body": "comentario", "postId": 1 }
+    ],
+    "profile": { "name": "pablo" }
+}
