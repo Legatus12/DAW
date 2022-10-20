@@ -1,0 +1,44 @@
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #1f242d;
+    color: #d53032;
+    font-size: 80px;
+}
+
+h1{
+    margin: 0;
+}
+
+#message{
+    position: absolute;
+    font-size: 30px;
+    top: 200px;
+}
+
+#list{
+    position: absolute;
+    font-size: 30px;
+    top: 20px;
+    left: 20px;
+}
+
+button{
+    width: 100px;
+    height: 100px;
+    font-size: 80px;
+    background-color: #313846;
+    color: white;
+}
+
+button:hover{
+    background-color: #4c586e;
+}
+
