@@ -9,7 +9,7 @@
     <body>
         <?php
             
-            
+            echo date("F", strtotime('2022-10-17'));
 
         ?>
     </body>
