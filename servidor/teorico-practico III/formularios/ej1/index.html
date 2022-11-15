@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario</title>
+        <style>
+            body{
+                font-size: 20px;
+            }
+        </style>
+        <script>  
+
+            function validarform(){  
+                var nombre = document.myform.nombre.value;  
+                var apellidos = document.myform.apellidos.value;
+                var edad = document.myform.edad.value;
+                var validedad = /^[0-9]+$/;
+                var dni = document.myform.dni.value;
+                var validdni = /^\d{8}[a-zA-Z]$/;
+                var correo = document.myform.correo.value;
+                var validEmail =  /^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/;
+                var paginaWeb = document.myform.paginaWeb.value;
+                var sugerencia = document.myform.sugerencia.value;  
+
+                if (nombre==null || nombre==""){  
+                    alert("El campo 'nombre' no puede estar en blanco");  
+                    return false;  
+                }
+                else if(apellidos==null || apellidos==""){  
+                    alert("El campo 'apellidos' no puede estar en blanco");  
+                    return false;  
+                }
+                else if(!validedad.test(edad)){  
+                    alert("edad incorrecta");  
+                    return false;
+                }
+                else if(!validdni.test(dni)){  
+                    alert("dni incorrecto");  
+                    return false;
+                }
+                else if(!validEmail.test(correo)){  
+                    alert("correo incorrecto");  
+                    return false;
+                }
+                else if(paginaWeb==null || paginaWeb==""){  
+                    alert("El campo 'pagina web' no puede estar en blanco");  
+                    return false;
+                }
+                else if(sugerencia==null || sugerencia==""){  
+                    alert("El campo 'sugerencia' no puede estar en blanco");  
+                    return false;
+                }
+            }  
+            
+        </script>  
+    </head>
+
+    <body>  
+        <form name="myform" method="request" action="formulario.php" onsubmit="return validarform()">  
+            <label>nombre: </label>
+            <input type="text" name="nombre"><br/>
+            <label>apellidos: </label>
+            <input type="text" name="apellidos"><br/>
+            <label>edad: </label>
+            <input type="text" name="edad"><br/>
+            <label>dni: </label>
+            <input type="text" name="dni"><br/>
+            <label>correo: </label>
+            <input type="text" name="correo"><br/>
+            <label>pagina web:</label>
+            <input type="text" name="paginaWeb"><br/>
+            <label>sugerencia: </label>
+            <textarea name="sugerencia"></textarea><br/>  
+            <input type="submit" value="submit">  
+        </form>  
+    </body>
+</html>
