@@ -12,28 +12,33 @@ class Alumno {
 		$this->apellido1 = $apellido1;
 		$this->apellido2 = $apellido2;
 		$this->dni = $dni;
-        $this->creados++;
+        Alumno::$creados++;
 	}
 
     function __destruct(){
-        $creados--;
+        Alumno::$creados--;
     }
 
-    function __get($atributo){
+    public function __get($atributo){
         if(property_exists(__CLASS__, $atributo)){
-            return $this->atributo;
+            return $this->$atributo;
         }
         return NULL;
     }
 
-    function __set($atributo, $valor){
+    public function __set($atributo, $valor){
         if(property_exists(__CLASS__, $atributo)){
             $this->$atributo = $valor;
         }
     }
-
-	function pinta_datos(){
-		echo $this->creados . " - " . $this->nombre;
-	}
+    
+    function setDni($dni){
+        $letter = substr($dni, -1);
+        $numbers = substr($dni, 0, -1);
+    
+        if (substr("TRWAGMYFPDXBNJZSQVHLCKE", $numbers%23, 1) == $letter && strlen($letter) == 1 && strlen ($numbers) == 8 ){
+        $this->dni = $dni;
+        }
+    }
 }
 ?>
