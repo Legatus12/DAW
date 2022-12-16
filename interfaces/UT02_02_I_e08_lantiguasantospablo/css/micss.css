@@ -1,0 +1,27 @@
+*{
+    font-family: arial;
+}
+
+table{
+    border-collapse: collapse;
+    caption-side: bottom;
+}
+
+thead{
+    color: white;
+    font-weight: bold;
+    background-color: #A7C942;
+    text-align: right;
+}
+
+td{
+    border: solid 1px green;
+}
+
+tbody tr:nth-child(even){
+    background-color: #EAF2D3;
+}
+
+tbody tr:hover{
+    background-color: lightgreen;
+}

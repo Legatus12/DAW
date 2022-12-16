@@ -1,0 +1,26 @@
+body{
+    margin: 40px;
+}
+
+p{
+    text-align: right;
+}
+
+p::after{
+    content: counter(check);
+}
+
+input{
+    visibility: hidden;
+}
+
+label{
+    padding: 10px;
+    border: solid 2px #aeaeae;
+    border-radius: 10px;
+}
+
+input:checked + label{
+    counter-increment: check;
+    background-color: #d6d6d6;
+}

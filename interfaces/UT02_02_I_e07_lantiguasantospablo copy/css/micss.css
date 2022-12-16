@@ -1,0 +1,15 @@
+ul.a{
+    list-style-type: none;
+    background-color: #d6d6d6;
+    border-left: solid 5px #f1121f;
+}
+
+ul.b{
+    padding-inline-start: 0;
+}
+
+ul.b li{
+    list-style-type: none;
+    padding: 10px;
+    border: solid 1px #d6d6d6;
+}

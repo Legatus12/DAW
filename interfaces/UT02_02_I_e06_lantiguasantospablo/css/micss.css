@@ -1,0 +1,4 @@
+ul.a{list-style-type: decimal-leading-zero;}
+ul.b{list-style-type: hebrew;}
+ol.c{list-style-type: arabic-indic;}
+ol.d{list-style-image: url("../favicon.ico");}
