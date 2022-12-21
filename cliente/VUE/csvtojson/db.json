@@ -1,0 +1,28 @@
+{
+  "material": [
+    {
+      "nserie": "245681",
+      "modelo": "test1",
+      "reservado \r": "si\r",
+      "id": 1
+    },
+    {
+      "nserie": "234239",
+      "modelo": "test2",
+      "reservado \r": "no\r",
+      "id": 2
+    },
+    {
+      "nserie": "374325",
+      "modelo": "test3",
+      "reservado \r": "no\r",
+      "id": 3
+    },
+    {
+      "nserie": "243563",
+      "modelo": "test4",
+      "reservado \r": "si",
+      "id": 4
+    }
+  ]
+}
