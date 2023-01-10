@@ -1,0 +1,39 @@
+body{
+    padding: 100px;
+}
+
+#main{
+    border: solid 1px navy;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    border-bottom: solid 1px gray;
+    background-color: steelblue;
+}
+
+#month, .letters{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+#month div{
+    border: solid 1px gray;
+    height: 64px;
+}
+
+.letters{
+    border: solid 1px gray;
+    background-color: lightblue;
+}
+
+.letters div, #month div{
+    padding: 10px;
+}
+
+.empty{
+    background-color: lightgray;
+}

@@ -1,0 +1,26 @@
+body{
+    background-color: orange;
+}
+
+h1{
+    font-family: Times, serif;
+    color: blue;
+    background-color: white;
+    border: solid 1px blue;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+    margin: 0 80px;
+}
+
+img:nth-child(2){
+    margin-top: 250px;
+}
+
+img:nth-child(3){
+    margin-top: 350px;
+}

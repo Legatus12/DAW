@@ -1,0 +1,118 @@
+p:nth-child(2){
+    border: dotted;
+}
+
+p:nth-child(3){
+    border: dashed;
+}
+
+p:nth-child(4){
+    border: solid;
+}
+
+p:nth-child(5){
+    border: double;
+}
+
+p:nth-child(6){
+    border: groove green;
+}
+
+p:nth-child(7){
+    border: ridge green;
+}
+
+p:nth-child(8){
+    border: inset green;
+}
+
+p:nth-child(9){
+    border: outset green;
+}
+
+p:nth-child(10){
+    border-bottom: solid 1px red;
+    padding: 10px;
+}
+
+p:nth-child(11){
+    border: solid 1px gray;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+p:nth-child(12){
+    border-left: solid 4px blue;
+    padding: 10px;
+    background-color: lightblue;
+}
+
+p:nth-child(13){
+    border: solid black;
+    border-top: double red;
+}
+
+p:nth-child(14){
+    border-style: solid;
+    border-color: black;
+    border-left-width: 10px;
+}
+
+p:nth-child(15){
+    border: solid blue;
+}
+
+p:nth-child(16){
+    border-style: solid;
+    border-color: red blue;
+}
+
+p:nth-child(17){
+    border-style: solid;
+    border-color: red lightgreen blue;
+}
+
+p:nth-child(18){
+    border-style: solid;
+    border-color: red lightgreen blue magenta;
+}
+
+p:nth-child(19){
+    border: solid 1px red;
+    outline: dotted;
+}
+
+p:nth-child(20){
+    border: solid 1px red;
+    outline: dashed;
+}
+
+p:nth-child(21){
+    border: solid 1px red;
+    outline: solid;
+}
+
+p:nth-child(22){
+    border: solid 1px red;
+    outline: double;
+}
+
+p:nth-child(23){
+    border: solid 1px red;
+    outline: groove green;
+}
+
+p:nth-child(24){
+    border: solid 1px red;
+    outline: ridge green;
+}
+
+p:nth-child(25){
+    border: solid 1px red;
+    outline: inset green;
+}
+
+p:nth-child(26){
+    border: solid 1px red;
+    outline: outset green;
+}
