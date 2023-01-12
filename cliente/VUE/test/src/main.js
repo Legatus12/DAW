@@ -1,11 +1,18 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import App from "./App.vue";
+import { borraLocalStorage } from "@/shared/LocalStorage/LocalStorage";
 
-import './assets/styles.css'
+import router from './router';
 
-const app = createApp(App)
+import "./assets/main.css";
 
-app.use(router)
+const app = createApp(App);
 
-app.mount('#app')
+app.use(router);
+
+app.mount("#app");
+
+window.onbeforeunload = function() {
+  localStorage.removeItem('permitido');
+  return '';
+};

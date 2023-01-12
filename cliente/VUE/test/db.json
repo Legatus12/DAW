@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "user": "admin",
+      "password": "admin",
+      "level": 3,
+      "id": 1
+    },
+    {
+      "user": "juan",
+      "password": "web",
+      "level": "1",
+      "id": 2
+    },
+    {
+      "user": "eee",
+      "password": "eee",
+      "level": "2",
+      "id": 3
+    },
+    {
+      "user": "eeeee",
+      "password": "eee",
+      "level": "1",
+      "id": 4
+    },
+    {
+      "user": "erwrwr",
+      "password": "werwrwre",
+      "level": "1",
+      "id": 5
+    },
+    {
+      "user": "asdad",
+      "password": "asdadads",
+      "level": "2",
+      "id": 6
+    }
+  ]
+}
