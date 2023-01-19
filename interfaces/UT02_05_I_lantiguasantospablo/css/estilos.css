@@ -10,7 +10,6 @@ table, tbody td{
 /*aplicamos borde a la tabla y a las celdas del cuerpo de la misma*/
 
 table{
-    border-collapse: collapse;
     border-radius: 6px;
 }
 /*hacemos que las celdas de la tabla compartan borde*/
@@ -36,6 +35,11 @@ td:nth-child(1){
     text-align: right;
 }
 /*alineamos el texto a la derecha en la primera celda de cada fila*/
+
+td:nth-child(2)::first-letter, td:nth-child(3)::first-letter{
+    font-size: 120%;
+}
+/*incrementamos un 20% el tamaño de las primeras letras de la segunda y tercera columna*/
 
 thead{ 
     background-color: dimgray;
@@ -63,3 +67,9 @@ tbody td:nth-child(even){
     background-color: whitesmoke;
 }
 /*dentro del cuerpo de la tabla, cambiamos el color de fondo de las celdas pares*/
+
+input:checked + label{
+    color: red;
+    font-weight: bold;
+}
+/*cabiamos el color y el peso de la fuente del label cuando el checkbox esté activado*/
