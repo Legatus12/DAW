@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -7,15 +8,33 @@
         <title>Document</title>
     </head>
     <body>
-        <form action="form.php" method="post" name="myform">
+        <form action="form.php" method="post" id="myform" onsubmit="return validate()">
             <label for="user">usuario</label>
             <input type="text" id="user" name="user">
+            <br>
             <label for="password">contraseña</label>
             <input type="password" id="password" name="password">
-            <input type="submit">
+            <br>
+            <input type="submit" value="INSERT">
         </form>
-        <form action="form2.php" method="post" name="myform2">
-            <input type="submit" value="SELECT"> 
+        <br><br>
+        <form action="form2.php" method="post">
+            <input type="submit" value="SELECT ALL"> 
+        </form>
+        <br><br>
+        <form action="form3.php" method="post">
+            <input type="submit" value="DELETE ALL"> 
         </form>
     </body>
+    <script>
+        function validate() {
+            if(document.getElementById("user").value == "" || document.getElementById("password").value == ""){
+                alert("Hay campos vacíos");
+                return false;
+            } else {
+                return true;
+            }
+
+        }
+    </script>
 </html>

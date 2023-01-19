@@ -1,0 +1,65 @@
+table{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #666;
+}
+
+table, tbody td{
+    border: solid 1px lightgray;
+}
+/*aplicamos borde a la tabla y a las celdas del cuerpo de la misma*/
+
+table{
+    border-collapse: collapse;
+    border-radius: 6px;
+}
+/*hacemos que las celdas de la tabla compartan borde*/
+
+caption{
+    color: maroon;
+    text-align: left;
+}
+/*cambiamos el color y la alineacion al caption de la tabla*/
+
+caption:nth-child(2){
+    color: #666;
+}
+/*cambiamos el color al segundo caption de la tabla*/
+
+td, th{
+    padding: 0.6rem;
+    width: 24rem;
+}
+/*definimos el padding y ancho de las celdas tanto del cuerpo como de la cabezera*/
+
+td:nth-child(1){
+    text-align: right;
+}
+/*alineamos el texto a la derecha en la primera celda de cada fila*/
+
+thead{ 
+    background-color: dimgray;
+    color: white;
+    text-align: left;
+}
+/*cambiamos el color de fondo y de letra de la cabezera de la tabla*/
+
+tbody tr:hover td{
+    background-color: lightyellow;
+    color: blue;
+}
+/*dentro del cuerpo de la tabla, cambiamos en color de fondo y de letra de las celdas
+cuando el ratón se encuentre sobre una fila*/
+
+/*ejercicio 1*/
+/*tbody tr:nth-child(even){
+    background-color: whitesmoke;
+}*/
+/*dentro del cuerpo de la tabla, cambiamos el color de fondo de las filas pares*/
+
+
+/*ejercicio 2*/
+tbody td:nth-child(even){
+    background-color: whitesmoke;
+}
+/*dentro del cuerpo de la tabla, cambiamos el color de fondo de las celdas pares*/

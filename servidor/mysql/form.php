@@ -8,28 +8,28 @@ $dbname = "AccesoUsuarios";
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Comprobamos la conexión
 if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+    die("-- Conexión fallida: " . $conn->connect_error);
 }
-echo "Conexión correcta"."<br>";
-// Realizamos la consulta SQL para extraer los datos
+echo "-- Conexión correcta"."<br>";
+
+//
 
 $user = $_POST["user"];
 $pass = $_POST["password"];
-$date = date('d/m/y');
+$date = date('y/m/d');
 
 $sql = "SELECT * FROM usuarios WHERE usuario = '$user'";
 $result = $conn->query($sql);
 
 if($result->num_rows > 0) {
+    echo "-- Error al insertar: el usuario ya existe.";
+} else {
     $sql = "INSERT INTO usuarios (usuario, contraseña, fecha) VALUES ('$user', '$pass', '$date')";
-} else {
-    echo "el usuario ya existe";
-}
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    if ($conn->query($sql) === TRUE) {
+        echo "-- Insert realizado con éxito";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 }
 
 $conn->close();

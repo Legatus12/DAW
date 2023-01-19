@@ -10,21 +10,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("-- Conexión fallida: " . $conn->connect_error);
 }
-echo "-- Conexión correcta"."<br>";
 
 //
 
-$sql = "SELECT * FROM usuarios";
+$sql = "DELETE FROM usuarios";
 $result = $conn->query($sql);
 
-if($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()){
-        echo "<br>" . $row["usuario"] . " - " . $row["contraseña"] . " - " . $row["fecha"] . "<br>";
-    }
-}
-else{
-    echo "-- 0 resultados.";
-}
+echo "registros borrados con exito.";
 
 $conn->close();
 
