@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="crea_tabla.php">
+            <input type="submit" value="CREATE usuarios">
+        </form>
+        <br>
+        <form action="crea_usuario.php">
+            <label for="nombre">nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <label for="mail">mail</label>
+            <input type="mail" name="mail" id="mail">
+            <input type="submit" value="INSERT">
+        </form>
+        <br>
+        <form action="lista_usuario.php">
+            <label for="filtraNombre">nombre</label>
+            <input type="text" name="filtraNombre" id="filtraNombre">
+            <label for="filtraMail">mail</label>
+            <input type="mail" name="filtraMail" id="filtraMail">
+            <input type="submit" value="LISTA">
+        </form>
+    </body>
+</html>
