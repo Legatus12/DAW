@@ -1,6 +1,4 @@
 <?php
-require_once("Alumno.php");
-
 //datos de conexión
 $servername = "localhost";
 $username = "testuser";
@@ -16,15 +14,13 @@ echo "--connected"."<br>";
 
 //
 
-$alumnos = [];
+$nombre = $_POST["editaNombre"];
+$mail = $_POST["editaMail"];
 
-$nombre = $_POST["nombre"];
-$mail = $_POST["mail"];
-
-$insert = "INSERT INTO usuarios (nombre, mail) VALUES ('$nombre', '$mail')";
+$update = "UPDATE usuarios SET mail='$mail' WHERE nombre='$nombre'";
 
 if ($conn->query($insert) === TRUE) {
-    echo "--insert succesfull";
+    echo "--update succesfull";
 } else {
     echo "--error: " . $conn->error;
 }
@@ -32,20 +28,12 @@ if ($conn->query($insert) === TRUE) {
 $select = "SELECT * FROM usuarios";
 $result = $conn->query($select);
 
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        array_push($alumnos, new Alumno($row["id"], $row["nombre"], $row["mail"]));
+if($result->num_rows > 0) {
+    echo "<br><br>";
+    while ($row = $result->fetch_assoc()){
+        echo "<br>" . $row["id"] . " - " . $row["nombre"] . " - " . $row["mail"] . "<br>";
     }
-} else {
-    echo "0 results";
 }
-
-echo "<br><br>";
-
-foreach ($alumnos as $alumno) {
-    echo $alumno->pinta_alumno() . "<br>";
-}
-
   
 $conn->close();
 

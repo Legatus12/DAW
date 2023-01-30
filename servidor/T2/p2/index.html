@@ -10,21 +10,34 @@
         <form action="crea_tabla.php">
             <input type="submit" value="CREATE usuarios">
         </form>
-        <br>
-        <form action="crea_usuario.php">
+        <br><br>
+        <p>CREAR NUEVO USUARIO</p>
+        <form action="crea_usuario.php" method="post">
             <label for="nombre">nombre</label>
             <input type="text" name="nombre" id="nombre">
             <label for="mail">mail</label>
             <input type="mail" name="mail" id="mail">
             <input type="submit" value="INSERT">
         </form>
-        <br>
-        <form action="lista_usuario.php">
-            <label for="filtraNombre">nombre</label>
-            <input type="text" name="filtraNombre" id="filtraNombre">
-            <label for="filtraMail">mail</label>
-            <input type="mail" name="filtraMail" id="filtraMail">
+        <br><br>
+        <p>FILTRAR USUARIOS</p>
+        <form action="lista_usuario.php" method="post">
+            <input type="text" name="filtroNombre" id="filtroNombre" placeholder="filtrar por nombre">
+            <input type="mail" name="filtroMail" id="filtroMail" placeholder="filtrar por mail">
             <input type="submit" value="LISTA">
+        </form>
+        <br><br>
+        <p>EDITAR USUARIO</p>
+        <form action="edita_usuario.php" method="post">
+            <input type="text" name="editaNombre" id="editaNombre" placeholder="usuario a modificar">
+            <input type="mail" name="editaMail" id="editaMail" placeholder="nuevo mail">
+            <input type="submit" value="EDITAR">
+        </form>
+        <br><br><br><br>
+        <p>LOG IN</p>
+        <form action="login.php" method="post">
+            <input type="text" name="logInNombre">
+            <input type="text" name="logInMail">
         </form>
     </body>
 </html>
