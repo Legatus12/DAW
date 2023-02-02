@@ -1,0 +1,27 @@
+#main-div {
+    background-image: url(./captura.png);
+    background-size: 120%;
+    background-repeat: repeat-y;
+}
+
+main {
+    float: left;
+    width: 50%;
+    height: 240px;
+    margin: 0 5%;
+}
+
+#extras {
+    float: left;
+    width: 30%;
+    height: 240px;
+    margin: 0 5%;
+}
+
+header, footer{
+    background-color: grey;
+}
+
+footer { 
+    clear: left;
+}

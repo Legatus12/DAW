@@ -1,0 +1,40 @@
+#envoltorio{
+    background-image: url(./background.jpg);
+    background-repeat: repeat-y;
+    background-size: 150%;
+    background-position: 50%;
+    height: 100%;
+
+}
+#principal {
+    float: left;
+    width: 50%;
+    border-left: 4px solid skyblue;
+    border-right: 4px solid skyblue;
+}
+#extras {
+    float: left;
+    width: 25%;
+}
+#noticias{
+    float: left;
+    width: 20%;
+}
+li{
+    list-style: none;
+    padding: 10px;
+}
+ul{
+    padding-inline-start: 0;
+}
+h2{
+    padding-left: 10px;
+}
+footer { 
+    clear: left; 
+    background-color: gray;
+}
+header{
+    background-color: gray;
+    height: 50px;
+}

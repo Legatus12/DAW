@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import {
@@ -26,10 +26,14 @@ const firebaseConfig = {
 };
 
 //Conectamos con la base de datos
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig)
 const db = getFirestore()
 //CRUD
 
-export const getDocuments = (ref) => getDocs(collection(db, ref));
+export const onGetPets = (ref, callback) => onSnapshot(collection(db, ref), callback)
 
-export const onGetDocuments = (ref, callback) => onSnapshot(collection(db, ref), callback);
+export const addPet = (ref, pet) => addDoc(collection(db, ref), pet)
+
+export const deletePet = (ref, id) => deleteDoc(doc(db, ref, id))
+
+export const getPet = (ref, id) => getDoc(doc(db, ref, id))

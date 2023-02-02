@@ -1,0 +1,32 @@
+#main-div{
+    background-image: url(./background.jpg);
+    background-repeat: repeat-y;
+    background-size: 150%;
+    background-position: 50%;
+
+}
+
+main {
+    float: left;
+    width: 50%;
+    height: 250px;
+}
+
+#extras {
+    float: left;
+    width: 25%;
+    height: 300px;
+}
+
+#noticias{
+    float: left;
+}
+
+footer { 
+    clear: left; 
+    background-color: gray;
+}
+
+header{
+    background-color: gray;
+}
