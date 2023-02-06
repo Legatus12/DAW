@@ -20,27 +20,27 @@ window.addEventListener('DOMContentLoaded', async() => {
             <br>`
         })
         list.innerHTML = html
+
+
+        const deleteButtons = list.querySelectorAll('.delete-btn')
+        console.log(deleteButtons)
+
+        deleteButtons.forEach(btn => btn.addEventListener('click', async(e) => {
+            console.log('echo')
+            console.log(e.target.dataset.id) 
+            await deletePet('pets', e.target.dataset.id)
+        }))
+
+        const editButtons = list.querySelectorAll('.edit-btn')
+        console.log(editButtons)
+
+        editButtons.forEach(btn => btn.addEventListener('click', async(e) => {
+            const pet = await getPet('pets', e.target.dataset.id)
+            const { animal, petName } = pet.data()
+            form['animal'] = animal
+            form['petName'] = petName
+        }))
     })
-
-    const deleteButtons = list.querySelectorAll('.delete-btn')
-    console.log(deleteButtons)
-
-    deleteButtons.forEach(btn => btn.addEventListener('click', async(e) => {
-        console.log('echo')
-        console.log(e.target.dataset.id) 
-        await deletePet('pets', e.target.dataset.id)
-    }))
-
-    const editButtons = list.querySelectorAll('.edit-btn')
-    console.log(editButtons)
-
-    editButtons.forEach(btn => btn.addEventListener('click', async(e) => {
-        const pet = await getPet('pets', e.target.dataset.id)
-        const { animal, petName } = pet.data()
-        form['animal'] = animal
-        form['petName'] = petName
-    }))
-
 })
 
 //add
