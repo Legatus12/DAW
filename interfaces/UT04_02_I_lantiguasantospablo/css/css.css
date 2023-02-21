@@ -62,11 +62,6 @@ nav div:nth-child(3) div{
     background-position:bottom
 }
 
-hr{
-    height: 4px;
-    background-color: #424242;
-}
-
 section{
     width: 100%;
     height: 60px;
@@ -112,62 +107,130 @@ span{
     font-weight: bold;
 }
 
+nav, section{
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 4px;
+    border-color: #424242;
+}
+
 @media (min-width: 30.5em){
     main{
-        padding: 50px;
+        padding: 25px;
     }
-    nav{
-        height: 100px;
+    main > div{
+        float: left;
+        width: 60%;
+        padding-left: 20px;
+        margin-bottom: 40px;
+    }
+    nav, section{
+        width: 33%;
+        height: 100%;
+        float: left;
+    }
+    nav > div{
+        padding-right: 20px;
+        width: fit-content;
+        float: none;
+        margin: 0 0 0 auto;
+    }
+    nav > div > div{
+        width: 100%;
+        height: 60px;
     }
     nav > div > div > div{
-        width: 50px;
-        height: 50px;
+        width: 25px;
+        height: 25px;
     }
     nav p{
-        margin: 2em 1em;
-        font-size: 16px;
+        font-size: 12px;
     }
     section{
-        margin: 1em 0;
         height: 120px;
+        text-align: right;
+    }
+    section > div{
+        padding-right: 20px;
+    }
+    section > div > div{
+        float: none;
+        width: 100%;
+        height: 50px;
     }
     section > div > div:nth-child(1) > div:nth-child(1){
-        margin: 1em;
-        width: 50px;
-        height: 50px;
+        width: 25px;
+        height: 25px;
     }
     section > div > div:nth-child(even){
         height: 100px;
         margin: 0 2em;
+    }
+    nav, section{
+        border-bottom-width: 0px;
+        border-right-width: 4px;
+    }
+    section > div > div:nth-child(even){
+        display: none;
     }
 }
 
 @media (min-width: 50.5em){
     main{
-        padding: 50px;
+        padding: 25px;
     }
-    nav{
-        height: 100px;
+    main > div{
+        float: left;
+        height: 300px;
+        width: 60%;
+    }
+    nav, section{
+        width: 33%;
+        height: 300px;
+        float: left;
+    }
+    nav > div{
+        width: 28%;
+        float: left;
+        margin: 0 0 0 auto;
+        padding: 0 5px;
+    }
+    nav > div > div{
+        width: 100%;
+        height: 60px;
     }
     nav > div > div > div{
-        width: 50px;
-        height: 50px;
+        width: 25px;
+        height: 25px;
     }
     nav p{
-        margin: 2em 1em;
-        font-size: 16px;
+        font-size: 12px;
     }
     section{
-        margin: 1em 0;
-        height: 120px;
+        text-align: right;
     }
-    section > div > div:nth-child(1) > div:nth-child(1){
-        margin: 1em;
-        width: 50px;
+    section > div{
+        padding-right: 20px;
+    }
+    section > div > div{
+        float: left;
+        width: fit-content;
         height: 50px;
     }
+    section > div > div:nth-child(1) > div:nth-child(1){
+        width: 25px;
+        height: 25px;
+    }
     section > div > div:nth-child(even){
-        height: 100px;
-        margin: 0 2em;
+        height: 40px;
+        width: 1px;
+        margin: 0 0.25em;
+    }
+    nav, section{
+        border-bottom-width: 0px;
+        border-right-width: 4px;
+    }
+    section > div > div:nth-child(even){
+        display: inline;
     }
 }

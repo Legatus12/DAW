@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Spectral+SC:400,700');
+
+
+div, header, main, footer,section, nav, article, figure {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+img, iframe {
+  width: 100%;
+  height: auto;
+}
+
+*{
+  font-family: 'Open Sans';
+}
+
+header, main{
+  float: left;
+}
+
+header{
+  width: 20%;
+  padding: 1em;
+}
+
+main{
+  width: 80%;
+}
+
+header h1{
+  background-color: lightgray;
+  border: solid #424242;
+  border-width: 4px 0;
+  padding: 1em;
+  color: #424242;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+nav{
+  padding: 0 1em;
+}
+
+nav ul{
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+nav ul li{
+  background-color: steelblue;
+  color: white;
+  padding: 0.75em;
+  margin-bottom: 0.2em;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  font-style: italic;
+  font-variant: small-caps;
+  font-size: 1.2em;
+}
+
+main > figure > figcaption{
+  background-color: steelblue;
+  color: white;
+  padding: 1em;
+  font-size: 1.5em;
+}
+
+main > section:nth-child(even){
+  background-color: lightgray;
+  font-style: italic;
+  text-align: center;
+  width: 100%;
+  float: left;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+main > section:nth-child(odd) > article{
+  float: left;
+  width: 33%;
+  padding: 1em;
+}
+
+main > section:nth-child(odd) > article figcaption{
+  color: steelblue;
+  font-size: 1.5em;
+}
+
+footer{
+  width: full;
+  background-color: skyblue;
+  margin-left: 20%;
+  clear: left;
+  padding: 0.3em;
+}
+
+footer > div:first-child{
+  float: left;
+  margin-top: 0.3em;
+}
+
+footer > div:first-child p{
+  margin: 0;
+}
+
+footer > div:last-child{
+  text-align: right;
+  height: 30px;
+  font-size: 0;
+}
+
+footer > div > span{
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  background-image: url('../img/social.png');
+  background-repeat: no-repeat;
+  background-position: -5px -5px;
+  cursor: pointer;
+}
+
+footer > div > span:nth-child(5){
+  background-position: -45px -5px;
+}
+
+footer > div > span:nth-child(4){
+  background-position: -5px -45px;
+}
+
+footer > div > span:nth-child(3){
+  background-position: -45px -45px;
+}
+
+footer > div > span:nth-child(2){
+  background-position: -85px -5px;
+}
+
+footer > div > span:first-child{
+  background-position: -85px -45px;
+}
+
+@media (max-width: 980px){
+  header, main{
+    float: none;
+    width: 100%;
+  }
+  header > div, header > nav, header > nav > ul > li{
+    float: left;
+  }
+  header ul{
+    margin-top: 3em;
+  }
+  header li{
+    margin: 0 0.1em;
+  }
+  footer{
+    margin: 0;
+  }
+}
+
+@media (max-width: 650px){
+  main > section:nth-child(odd) > article{
+    width: 50%;
+  }
+  header > div{
+    width: 33%;
+  }
+  header > nav{
+    padding: 0 0.5em;
+    width: 66%;
+  }
+  header li{
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 480px){
+  header > div, header > nav{
+    float: none;
+  }
+  header{
+    margin-bottom: 4em;
+  }
+  header > div{
+    width: 100%;
+  }
+  header > nav{
+    width: 100%;
+  }
+  header ul{
+    margin-top: 0;
+  }
+  header li{
+    font-size: 1em;
+  }
+  main > section:nth-child(odd) > article{
+    width: 100%;
+  }
+}
