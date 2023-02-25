@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+*{
+    margin: 0;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    background-color: skyblue;
+}
+
+ul{
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+body > ul{
+    width: 28em;
+    margin: 1em auto;
+    padding: 1em;
+    background-color: white;
+}
+
+li{
+    display: flex;
+    align-items: center;
+}
+
+body > ul > li{
+    gap: 1em;
+    padding: 1em;
+    border-bottom: solid 1px lightgray;
+}
+
+body > ul > li:last-child{
+    border-bottom: 0;
+}
+
+li > div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+    width: 5em;
+    border-radius: 50%;
+    padding: 0.25em;
+    border: solid 2px steelblue;
+}
+
+div > ul li::before{
+    content: '';
+    display: inline-block;
+    margin-right: 10px;
+    height: 30px;
+    width: 30px;
+    background-image: url('./img/iconos.png');
+    background-size: cover;
+}
+
+div > ul li:nth-child(1):before{
+    background-position: 0 -50px;
+}
+
+div > ul li:nth-child(2):before{
+    background-position: 0 -28px;
+}
+
+div > ul li:nth-child(3):before{
+    background-position: 0 -76px;
+}
