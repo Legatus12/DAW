@@ -1,0 +1,30 @@
+#container{
+    width: 960px;
+    height: 400px;
+    background-image: url(./captura.png);
+    margin: 0 auto;
+    background-size: 1200px;
+    background-repeat: repeat-y;
+}
+
+main{
+    float: left;
+    width: 560px;
+    height: 380px;
+    margin: 0 20px;
+}
+
+#extras{
+    float: left;
+    width: 320px;
+    height: 380px;
+    margin: 0 20px;
+}
+
+header, footer{
+    background-color: grey;
+}
+
+footer{ 
+    clear: left;
+}

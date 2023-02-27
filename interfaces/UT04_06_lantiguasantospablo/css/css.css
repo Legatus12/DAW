@@ -8,3 +8,21 @@ body {
 img {
 	max-width: 100%;
 }
+
+.masonry {
+	column-width: 250px;
+	column-count: 5;
+	column-rule: solid 2px;
+	column-gap: 3em;
+}
+
+.masonry p {font-size: 1.2em;}
+
+ul {list-style: none;}
+  
+li {
+    break-inside: avoid;
+    margin-top: 5em;
+}
+  
+li:first-child {margin-top: 0em;}

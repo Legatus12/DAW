@@ -1,3 +1,147 @@
+/*
+Se establecen variables para ser utilizadas en el diseño de una rejilla. 
+Las variables son establecidas en el selector ":root", lo que significa que son accesibles en todo el documento.
+La primera variable "--col-num" es el número de columnas en la rejilla. 
+La segunda variable "--gutter" es el ancho del gutter entre las columnas, establecido en porcentaje.
+La tercera variable "--row-space" se calcula utilizando la función "calc()" restando el resultado de multiplicar el ancho del gutter (--gutter) por la diferencia entre el número de columnas (--col-num) y 1 al ancho total de la rejilla (100%).
+La cuarta variable "--col-width" se calcula utilizando la función "calc()" dividiendo el ancho total de la fila (--row-space) entre el número de columnas (--col-num).
+*/
+:root {
+    --col-num: 12;
+    --gutter: 1.6%;
+    --row-space: calc( 100% - var(--gutter) * calc( var(--col-num) - 1 ) );
+    --col-width: calc( var(--row-space) / var(--col-num) );
+}
+
+html { box-sizing: border-box; }
+
+*, *::before, *::after { box-sizing: inherit; } /* heredan los bloques tamb */
+
+/* ################################################################## FLUID */
+
+.container {
+    width: 100%;
+    margin-left: auto;  /* centrar sin alterar los demás márgenes */
+    margin-right: auto; /* centrar sin alterar los demás márgenes */
+}
+
+.row {
+    position: relative; /* referencia para elementos en absoluta */
+}
+
+.row::before,
+.row::after {
+    content: "";
+    display: table;
+}
+
+.row::after {
+    clear: both;
+}
+
+/* esta regla es demasiado fuerte */
+/*
+[class|='col'] + [class|='col'] { 
+    margin-left: var(--gutter);
+} 
+*/
+/* bootstrap se lo aplica a absolutamente todas las clases en uso */
+
+
+
+[class|='col'], .col {
+    float: left;
+    min-height: 1px; /* para que no desaparezcan las columnas vacías */
+    width: 100%;
+    margin-left: calc( var(--gutter) / 2 - 0.4% );
+    margin-right: calc( var(--gutter) / 2 - 0.4% );
+}
+
+/*
+El ancho se calcula multiplicando la variable "--col-width" por el numero de columna
+y luego sumando el resultado de multiplicar la variable "--gutter" por la diferencia entre el numero de la columna y 1
+*/
+.col-1  { width: calc( var(--col-width) *  1 + var(--gutter) * (  1 - 1 ) ); }
+.col-2  { width: calc( var(--col-width) *  2 + var(--gutter) * (  2 - 1 ) ); }
+.col-3  { width: calc( var(--col-width) *  3 + var(--gutter) * (  3 - 1 ) ); }
+.col-4  { width: calc( var(--col-width) *  4 + var(--gutter) * (  4 - 1 ) ); }
+.col-5  { width: calc( var(--col-width) *  5 + var(--gutter) * (  5 - 1 ) ); }
+.col-6  { width: calc( var(--col-width) *  6 + var(--gutter) * (  6 - 1 ) ); }
+.col-7  { width: calc( var(--col-width) *  7 + var(--gutter) * (  7 - 1 ) ); }
+.col-8  { width: calc( var(--col-width) *  8 + var(--gutter) * (  8 - 1 ) ); }
+.col-9  { width: calc( var(--col-width) *  9 + var(--gutter) * (  9 - 1 ) ); }
+.col-10 { width: calc( var(--col-width) * 10 + var(--gutter) * ( 10 - 1 ) ); }
+.col-11 { width: calc( var(--col-width) * 11 + var(--gutter) * ( 11 - 1 ) ); }
+.col-12 { width: calc( var(--col-width) * 12 + var(--gutter) * ( 12 - 1 ) ); }
+
+/* ################################################################## SMALL */
+
+@media screen and (min-width: 576px) { /* no se puede poner como variable */
+    .col-sm-1  { width: calc( var(--col-width) *  1 + var(--gutter) * (  1 - 1 ) ); }
+    .col-sm-2  { width: calc( var(--col-width) *  2 + var(--gutter) * (  2 - 1 ) ); }
+    .col-sm-3  { width: calc( var(--col-width) *  3 + var(--gutter) * (  3 - 1 ) ); }
+    .col-sm-4  { width: calc( var(--col-width) *  4 + var(--gutter) * (  4 - 1 ) ); }
+    .col-sm-5  { width: calc( var(--col-width) *  5 + var(--gutter) * (  5 - 1 ) ); }
+    .col-sm-6  { width: calc( var(--col-width) *  6 + var(--gutter) * (  6 - 1 ) ); }
+    .col-sm-7  { width: calc( var(--col-width) *  7 + var(--gutter) * (  7 - 1 ) ); }
+    .col-sm-8  { width: calc( var(--col-width) *  8 + var(--gutter) * (  8 - 1 ) ); }
+    .col-sm-9  { width: calc( var(--col-width) *  9 + var(--gutter) * (  9 - 1 ) ); }
+    .col-sm-10 { width: calc( var(--col-width) * 10 + var(--gutter) * ( 10 - 1 ) ); }
+    .col-sm-11 { width: calc( var(--col-width) * 11 + var(--gutter) * ( 11 - 1 ) ); }
+    .col-sm-12 { width: calc( var(--col-width) * 12 + var(--gutter) * ( 12 - 1 ) ); }
+}
+
+/* ################################################################## MEDIUM */
+
+@media screen and (min-width: 768px) { /* no se puede poner como variable */
+    .col-md-1  { width: calc( var(--col-width) *  1 + var(--gutter) * (  1 - 1 ) ); }
+    .col-md-2  { width: calc( var(--col-width) *  2 + var(--gutter) * (  2 - 1 ) ); }
+    .col-md-3  { width: calc( var(--col-width) *  3 + var(--gutter) * (  3 - 1 ) ); }
+    .col-md-4  { width: calc( var(--col-width) *  4 + var(--gutter) * (  4 - 1 ) ); }
+    .col-md-5  { width: calc( var(--col-width) *  5 + var(--gutter) * (  5 - 1 ) ); }
+    .col-md-6  { width: calc( var(--col-width) *  6 + var(--gutter) * (  6 - 1 ) ); }
+    .col-md-7  { width: calc( var(--col-width) *  7 + var(--gutter) * (  7 - 1 ) ); }
+    .col-md-8  { width: calc( var(--col-width) *  8 + var(--gutter) * (  8 - 1 ) ); }
+    .col-md-9  { width: calc( var(--col-width) *  9 + var(--gutter) * (  9 - 1 ) ); }
+    .col-md-10 { width: calc( var(--col-width) * 10 + var(--gutter) * ( 10 - 1 ) ); }
+    .col-md-11 { width: calc( var(--col-width) * 11 + var(--gutter) * ( 11 - 1 ) ); }
+    .col-md-12 { width: calc( var(--col-width) * 12 + var(--gutter) * ( 12 - 1 ) ); }
+}
+
+/* ################################################################## LARGE */
+
+@media screen and (min-width: 992px) { /* no se puede poner como variable */
+    .col-lg-1  { width: calc( var(--col-width) *  1 + var(--gutter) * (  1 - 1 ) ); }
+    .col-lg-2  { width: calc( var(--col-width) *  2 + var(--gutter) * (  2 - 1 ) ); }
+    .col-lg-3  { width: calc( var(--col-width) *  3 + var(--gutter) * (  3 - 1 ) ); }
+    .col-lg-4  { width: calc( var(--col-width) *  4 + var(--gutter) * (  4 - 1 ) ); }
+    .col-lg-5  { width: calc( var(--col-width) *  5 + var(--gutter) * (  5 - 1 ) ); }
+    .col-lg-6  { width: calc( var(--col-width) *  6 + var(--gutter) * (  6 - 1 ) ); }
+    .col-lg-7  { width: calc( var(--col-width) *  7 + var(--gutter) * (  7 - 1 ) ); }
+    .col-lg-8  { width: calc( var(--col-width) *  8 + var(--gutter) * (  8 - 1 ) ); }
+    .col-lg-9  { width: calc( var(--col-width) *  9 + var(--gutter) * (  9 - 1 ) ); }
+    .col-lg-10 { width: calc( var(--col-width) * 10 + var(--gutter) * ( 10 - 1 ) ); }
+    .col-lg-11 { width: calc( var(--col-width) * 11 + var(--gutter) * ( 11 - 1 ) ); }
+    .col-lg-12 { width: calc( var(--col-width) * 12 + var(--gutter) * ( 12 - 1 ) ); }
+}
+
+/* ################################################################## EXTRA */
+
+@media screen and (min-width: 1200px) { /* no se puede poner como variable */
+    .col-xl-1  { width: calc( var(--col-width) *  1 + var(--gutter) * (  1 - 1 ) ); }
+    .col-xl-2  { width: calc( var(--col-width) *  2 + var(--gutter) * (  2 - 1 ) ); }
+    .col-xl-3  { width: calc( var(--col-width) *  3 + var(--gutter) * (  3 - 1 ) ); }
+    .col-xl-4  { width: calc( var(--col-width) *  4 + var(--gutter) * (  4 - 1 ) ); }
+    .col-xl-5  { width: calc( var(--col-width) *  5 + var(--gutter) * (  5 - 1 ) ); }
+    .col-xl-6  { width: calc( var(--col-width) *  6 + var(--gutter) * (  6 - 1 ) ); }
+    .col-xl-7  { width: calc( var(--col-width) *  7 + var(--gutter) * (  7 - 1 ) ); }
+    .col-xl-8  { width: calc( var(--col-width) *  8 + var(--gutter) * (  8 - 1 ) ); }
+    .col-xl-9  { width: calc( var(--col-width) *  9 + var(--gutter) * (  9 - 1 ) ); }
+    .col-xl-10 { width: calc( var(--col-width) * 10 + var(--gutter) * ( 10 - 1 ) ); }
+    .col-xl-11 { width: calc( var(--col-width) * 11 + var(--gutter) * ( 11 - 1 ) ); }
+    .col-xl-12 { width: calc( var(--col-width) * 12 + var(--gutter) * ( 12 - 1 ) ); }
+}
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Spectral+SC:400,700');
 
 
@@ -14,19 +158,6 @@ img, iframe {
 
 *{
   font-family: 'Open Sans';
-}
-
-header, main{
-  float: left;
-}
-
-header{
-  width: 20%;
-  padding: 1em;
-}
-
-main{
-  width: 80%;
 }
 
 header h1{
@@ -74,15 +205,11 @@ main > section:nth-child(even){
   background-color: lightgray;
   font-style: italic;
   text-align: center;
-  width: 100%;
-  float: left;
   padding: 1em;
   margin: 1em 0;
 }
 
 main > section:nth-child(odd) > article{
-  float: left;
-  width: 33%;
   padding: 1em;
 }
 
@@ -92,10 +219,7 @@ main > section:nth-child(odd) > article figcaption{
 }
 
 footer{
-  width: full;
   background-color: skyblue;
-  margin-left: 20%;
-  clear: left;
   padding: 0.3em;
 }
 
@@ -142,63 +266,4 @@ footer > div > span:nth-child(2){
 
 footer > div > span:first-child{
   background-position: -85px -45px;
-}
-
-@media (max-width: 980px){
-  header, main{
-    float: none;
-    width: 100%;
-  }
-  header > div, header > nav, header > nav > ul > li{
-    float: left;
-  }
-  header ul{
-    margin-top: 3em;
-  }
-  header li{
-    margin: 0 0.1em;
-  }
-  footer{
-    margin: 0;
-  }
-}
-
-@media (max-width: 650px){
-  main > section:nth-child(odd) > article{
-    width: 50%;
-  }
-  header > div{
-    width: 33%;
-  }
-  header > nav{
-    padding: 0 0.5em;
-    width: 66%;
-  }
-  header li{
-    font-size: 0.7em;
-  }
-}
-
-@media (max-width: 480px){
-  header > div, header > nav{
-    float: none;
-  }
-  header{
-    margin-bottom: 4em;
-  }
-  header > div{
-    width: 100%;
-  }
-  header > nav{
-    width: 100%;
-  }
-  header ul{
-    margin-top: 0;
-  }
-  header li{
-    font-size: 1em;
-  }
-  main > section:nth-child(odd) > article{
-    width: 100%;
-  }
 }
